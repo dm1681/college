@@ -1,0 +1,120 @@
+#K IRAF       = NOAO/IRAFV2.16          version    %-23s     
+#K USER       = dm1681                  name       %-23s     
+#K HOST       = Diego-Laptop            computer   %-23s     
+#K DATE       = 2017-05-01              yyyy-mm-dd %-23s     
+#K TIME       = 16:22:45                hh:mm:ss   %-23s     
+#K PACKAGE    = apphot                  name       %-23s     
+#K TASK       = phot                    name       %-23s     
+#
+#K SCALE      = 1.                      units      %-23.7g   
+#K FWHMPSF    = 2.5                     scaleunit  %-23.7g   
+#K EMISSION   = yes                     switch     %-23b     
+#K DATAMIN    = INDEF                   counts     %-23.7g   
+#K DATAMAX    = INDEF                   counts     %-23.7g   
+#K EXPOSURE   = exptime                 keyword    %-23s     
+#K AIRMASS    = airmass                 keyword    %-23s     
+#K FILTER     = filters                 keyword    %-23s     
+#K OBSTIME    = ut                      keyword    %-23s     
+#
+#K NOISE      = poisson                 model      %-23s     
+#K SIGMA      = INDEF                   counts     %-23.7g   
+#K GAIN       = ""                      keyword    %-23s     
+#K EPADU      = 14.                     e-/adu     %-23.7g   
+#K CCDREAD    = ""                      keyword    %-23s     
+#K READNOISE  = 0.                      e-         %-23.7g   
+#
+#K CALGORITHM = centroid                algorithm  %-23s     
+#K CBOXWIDTH  = 7.                      scaleunit  %-23.7g   
+#K CTHRESHOLD = 0.                      sigma      %-23.7g   
+#K MINSNRATIO = 1.                      number     %-23.7g   
+#K CMAXITER   = 10                      number     %-23d     
+#K MAXSHIFT   = 1.                      scaleunit  %-23.7g   
+#K CLEAN      = no                      switch     %-23b     
+#K RCLEAN     = 1.                      scaleunit  %-23.7g   
+#K RCLIP      = 2.                      scaleunit  %-23.7g   
+#K KCLEAN     = 3.                      sigma      %-23.7g   
+#
+#K SALGORITHM = centroid                algorithm  %-23s     
+#K ANNULUS    = 15.                     scaleunit  %-23.7g   
+#K DANNULUS   = 10.                     scaleunit  %-23.7g   
+#K SKYVALUE   = 0.                      counts     %-23.7g   
+#K KHIST      = 3.                      sigma      %-23.7g   
+#K BINSIZE    = 0.1                     sigma      %-23.7g   
+#K SMOOTH     = yes                     switch     %-23b     
+#K SMAXITER   = 10                      number     %-23d     
+#K SLOCLIP    = 0.                      percent    %-23.7g   
+#K SHICLIP    = 0.                      percent    %-23.7g   
+#K SNREJECT   = 50                      number     %-23d     
+#K SLOREJECT  = 3.                      sigma      %-23.7g   
+#K SHIREJECT  = 3.                      sigma      %-23.7g   
+#K RGROW      = 0.                      scaleunit  %-23.7g   
+#
+#K WEIGHTING  = constant                model      %-23s     
+#K APERTURES  = 10                      scaleunit  %-23s     
+#K ZMAG       = 25.                     zeropoint  %-23.7g   
+#
+#N IMAGE               XINIT     YINIT     ID    COORDS                 LID    \
+#U imagename           pixels    pixels    ##    filename               ##     \
+#F %-23s               %-10.3f   %-10.3f   %-6d  %-23s                  %-6d    
+#
+#N XCENTER    YCENTER    XSHIFT  YSHIFT  XERR    YERR            CIER CERROR   \
+#U pixels     pixels     pixels  pixels  pixels  pixels          ##   cerrors  \
+#F %-14.3f    %-11.3f    %-8.3f  %-8.3f  %-8.3f  %-15.3f         %-5d %-9s      
+#
+#N MSKY           STDEV          SSKEW          NSKY   NSREJ     SIER SERROR   \
+#U counts         counts         counts         npix   npix      ##   serrors  \
+#F %-18.7g        %-15.7g        %-15.7g        %-7d   %-9d      %-5d %-9s      
+#
+#N ITIME          XAIRMASS       IFILTER                OTIME                  \
+#U timeunit       number         name                   timeunit               \
+#F %-18.7g        %-15.7g        %-23s                  %-23s                   
+#
+#N RAPERT   SUM           AREA       FLUX          MAG    MERR   PIER PERROR   \
+#U scale    counts        pixels     counts        mag    mag    ##   perrors  \
+#F %-12.2f  %-14.7g       %-11.7g    %-14.7g       %-7.3f %-6.3f %-5d %-9s      
+#
+m920007                104.496   425.609   1     coords                 1      \
+   99.835     428.049    -4.661  2.440   0.003   0.003          107  BigShift  \
+   39.67048       7.093288       -1.896173      1243   15       0    NoError   \
+   120.           1.08874        50                      3:48:07.00            \
+   10.00    33357.73      314.3863   20885.88      19.398 0.008 0    NoError    
+m920007                129.440   362.530   2     coords                 2      \
+   124.783    365.015    -4.657  2.485   0.007   0.008          107  BigShift  \
+   39.54184       7.170848       -2.642757      1258   5        0    NoError   \
+   120.           1.08874        50                      3:48:07.00            \
+   10.00    15861.43      314.2377   3435.899      21.358 0.045 0    NoError    
+m920007                44.490    322.529   3     coords                 3      \
+   39.813     324.945    -4.677  2.416   0.004   0.004          107  BigShift  \
+   39.88232       7.041719       2.861701       1249   7        0    NoError   \
+   120.           1.08874        50                      3:48:07.00            \
+   10.00    26850.51      314.3596   14313.12      19.809 0.011 0    NoError    
+m920007                208.891   323.745   4     coords                 4      \
+   204.269    326.108    -4.622  2.363   0.004   0.004          107  BigShift  \
+   40.28254       7.310005       4.132627       1231   26       0    NoError   \
+   120.           1.08874        50                      3:48:07.00            \
+   10.00    28490.09      314.3664   15826.61      19.699 0.010 0    NoError    
+m920007                149.613   286.134   5     coords                 5      \
+   145.100    288.232    -4.513  2.098   0.003   0.003          107  BigShift  \
+   40.54002       7.46565        2.398719       1250   12       0    NoError   \
+   120.           1.08874        50                      3:48:07.00            \
+   10.00    31448.26      314.3467   18704.64      19.518 0.009 0    NoError    
+m920007                165.482   235.932   6     coords                 6      \
+   160.845    238.174    -4.637  2.242   0.006   0.006          107  BigShift  \
+   39.46685       6.99204        2.942722       1248   10       0    NoError   \
+   120.           1.08874        50                      3:48:07.00            \
+   10.00    19103.51      314.4044   6694.959      20.634 0.023 0    NoError    
+m920007                234.408   134.285   7     coords                 7      \
+   229.808    136.402    -4.600  2.117   0.003   0.003          107  BigShift  \
+   40.14457       6.946702       3.291769       1229   25       0    NoError   \
+   120.           1.08874        50                      3:48:07.00            \
+   10.00    44824.45      314.4999   32198.99      18.928 0.005 0    NoError    
+m920007                20.910    102.604   8     coords                 8      \
+   16.161     104.971    -4.749  2.367   0.010   0.010          107  BigShift  \
+   39.40266       7.23318        -2.765049      991    12       0    NoError   \
+   120.           1.08874        50                      3:48:07.00            \
+   10.00    13997.64      314.3734   1610.491      22.181 0.099 0    NoError    
+m920007                41.592    178.623   9     coords                 9      \
+   36.823     180.923    -4.769  2.300   0.008   0.008          107  BigShift  \
+   39.52649       7.150547       3.491848       1248   10       0    NoError   \
+   120.           1.08874        50                      3:48:07.00            \
+   10.00    14852.12      314.3763   2425.931      21.736 0.064 0    NoError    
