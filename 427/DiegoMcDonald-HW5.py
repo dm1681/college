@@ -5,14 +5,27 @@ import pycuda.driver as cuda
 import pycuda.curandom
 import pycuda.autoinit
 import random
-import matplotlib.pyplot as plt
 import time
 import numpy as np
 import pdb
 
+# how many iterations?
+# 10 million is good
 N = 10000000
+
 # def function for non-gpu calcs
 def MC_cir(r, N):
+	'''
+	Params:
+	------
+	r = radius of circle with which to approx. pi
+	N = # of iterations
+	Output:
+	------
+	n_pi = pi after n iterations
+	n_err = error (n_pi - pi)
+	t_elapsed = how long it took
+	'''
 	t_start = time.time()
 	n = 1
 	C = 0
@@ -25,10 +38,10 @@ def MC_cir(r, N):
 	        C+=1
 	    n += 1
 	n_pi = 4. * C/S
-	n_err = n_pi - np.pi
        
 	t_end = time.time()
 	t_elapsed = t_end - t_start
+	n_err = n_pi - np.pi
 	return n_pi, n_err, t_elapsed
 
 
@@ -38,6 +51,9 @@ rg = pycuda.curandom.XORWOWRandomNumberGenerator()
 # generate x and y
 x_rand = rg.gen_uniform(N, np.float32)
 y_rand = rg.gen_uniform(N, np.float32)
+
+# generate counting arrays
+# z_count is for when there needs to be a 0 in c_count
 s_count = gpuarray.zeros_like(x_rand)
 z_count = gpuarray.zeros_like(x_rand)
 c_count = gpuarray.zeros_like(x_rand)
@@ -75,16 +91,14 @@ c = c_gpu.get()
 s = s_gpu.get()
 pi_est = pi_est_gpu.get()
 
-c_new = c_gpu_count.get()
-s_new = s_gpu_count.get()
 
 pi_err = pi_est - np.pi
 
 elapsed_time = end_time - start_time
-print 'GPU:', pi_est, pi_err, elapsed_time, 'secs'
+print 'GPU:', pi_est, 'err:', pi_err, 'in:', elapsed_time, 'secs'
 
 # now for cpu calcs
 
 pi_cpu, pi_err_cpu, elapsed_time_cpu = MC_cir(1,N)
 
-print 'CPU:', pi_cpu, pi_err_cpu, elapsed_time_cpu, 'secs'
+print 'CPU:', pi_cpu, 'err:', pi_err_cpu, 'in:',elapsed_time_cpu, 'secs'
